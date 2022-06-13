@@ -59,7 +59,7 @@ export class HeaderComponent implements OnInit {
         this.user = resp;
 
         this.nombre = this.user.nombre
-        this.foto = "http://localhost:8080/api/v1/users/download/" + this.user.id
+        this.foto = "https://ilusion-app.herokuapp.com/api/v1/users/download/" + this.user.id
 
       }, error: err => {
 
