@@ -70,7 +70,7 @@ export class PerfilComponent implements OnInit {
         next: (user) => {
           this.user = user;
           this.rol = this.user.role.split('_')[1];
-          this.foto = "http://localhost:8080/api/v1/users/download/" + this.user.id
+          this.foto = "https://ilusion-app.herokuapp.com/api/v1/users/download/" + this.user.id
         }
     })
   }
