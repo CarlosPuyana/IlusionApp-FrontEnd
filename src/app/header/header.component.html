@@ -26,7 +26,7 @@
       <ul>
         <li>
           <button mat-button [matMenuTriggerFor]="menu" class="user mt-2 d-flex align-items-center" >
-            <img *ngIf="user?.fileName" src="{{foto}}" alt="" class="user-image mr-1 p-2" /> <img *ngIf="!user?.fileName" src="http://localhost:8080/img/no_usuario.png" alt="Sin foto" class="user-image mr-1 p-2">
+            <img *ngIf="user?.fileName" src="{{foto}}" alt="" class="user-image mr-1 p-2" /> <img *ngIf="!user?.fileName" src="https://ilusion-app.herokuapp.com/img/no_usuario.png" alt="Sin foto" class="user-image mr-1 p-2">
             {{user.userName}}
             <mat-icon class="user-image-icon ml-1">keyboard_arrow_down</mat-icon>
           </button>
