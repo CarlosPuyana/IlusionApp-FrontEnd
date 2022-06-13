@@ -1,0 +1,17 @@
+  <mat-drawer-container *ngIf="esIndex">
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+      <app-sidenav></app-sidenav>
+    </mat-drawer>
+
+    <mat-drawer-content>
+      <app-header (toggleSidebarForMe)="sideBarToggler()"></app-header>
+      <br> <br>
+      <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container>
+
+  <div *ngIf="!esIndex">
+
+    <router-outlet></router-outlet>
+
+  </div>

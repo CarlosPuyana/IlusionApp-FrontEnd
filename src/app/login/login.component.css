@@ -1,0 +1,31 @@
+@charset "UTF-8";
+@import url("../../../node_modules/primeng/resources/themes/lara-light-blue/theme.css");
+ @import url("../../../node_modules/primeng/resources/primeng.min.css");
+ @import  url("../../../node_modules/primeicons/primeicons.css");
+
+
+/*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+.login,
+.image {
+  min-height: 100vh;
+}
+
+.bg-image {
+  background-image: url('https://phantom-elmundo.unidadeditorial.es/297988002a7215e4c442c0088ce69a9e/resize/473/f/webp/assets/multimedia/imagenes/2022/01/13/16421099348840.jpg');
+  background-size: cover;
+  background-position: center center;
+}
+
+
+
+input, p {
+	font-family: 'Merriweather', serif;
+	 overflow-y: hidden;
+
+}

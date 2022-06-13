@@ -1,0 +1,59 @@
+<div class="container p-5 flex text-center bg-white">
+  <div class="card">
+    <p-panel header="Administración de Restaurantes">
+
+      <div style="margin-bottom: 20px;">
+        <p-menubar [model]="items"></p-menubar>
+      </div>
+
+      <p-table #dt [value]="restaurantes" responsiveLayout="stack" breackpoint="815px"  [columns]="cols" selectionMode="single" sortMode="multiple" [(selection)]="selectedRestaurante"
+      dataKey="id" [paginator]="true" [rows]="5" [rowsPerPageOptions]="[5,9]" [filterDelay]="0" [globalFilterFields]="['userName', 'email', 'nombre', 'apellidos', 'role']">
+
+
+
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th pSortableColumn="usuario">Restaurante
+            <p-sortIcon field="usuario"></p-sortIcon>
+          </th>
+
+          <th pSortableColumn="email">Teléfono
+            <p-sortIcon field="email"></p-sortIcon>
+          </th>
+
+          <th pSortableColumn="nombre">Ciudad
+            <p-sortIcon field="nombre"></p-sortIcon>
+          </th>
+
+
+          <th pSortableColumn="apellidos">CP
+            <p-sortIcon field="apellidos"></p-sortIcon>
+          </th>
+
+
+          <th pSortableColumn="role">Dirección
+            <p-sortIcon field="role"></p-sortIcon>
+          </th>
+
+        </tr>
+
+      </ng-template>
+
+      <ng-template pTemplate="body" let-user let-columns="user">
+
+        <tr [pSelectableRow]="user">
+
+          <td> <span class="p-column-title" pSortableColumn="usuario"><strong>Restaurante</strong></span> {{user.nombreRestaurante}} </td>
+          <td> <span class="p-column-title" pSortableColumn="email"><strong>Teléfono</strong></span> {{user.telefono}} </td>
+          <td> <span class="p-column-title" pSortableColumn="nombre"><strong>Ciudad</strong></span> {{user.ciudad}} </td>
+          <td> <span class="p-column-title" pSortableColumn="apellidos"><strong>CP</strong></span> {{user.codigoPostal}} </td>
+          <td> <span class="p-column-title" pSortableColumn="role"><strong>Dirección</strong></span> {{user.direccion}} </td>
+
+        </tr>
+
+      </ng-template>
+
+      </p-table>
+  </p-panel>
+  </div>
+</div>

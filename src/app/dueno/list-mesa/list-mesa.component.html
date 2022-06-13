@@ -1,0 +1,47 @@
+<app-index></app-index>
+<div class="container p-5 flex text-center bg-white">
+  <div class="card mh-100">
+    <p-panel header="Administración de Mesas">
+
+      <div style="margin-bottom: 20px;">
+        <p-menubar [model]="items"></p-menubar>
+      </div>
+
+      <p-table #dt [value]="mesas" responsiveLayout="stack" breackpoint="815px" [columns]="cols"  sortMode="multiple"
+      dataKey="id" selectionMode="single" [(selection)]="selectedMesa" [paginator]="true" [rows]="5" [rowsPerPageOptions]="[5,10,25]" [filterDelay]="0" [globalFilterFields]="['nombreMesa', 'capacidad']">
+
+        <ng-template pTemplate="header" let-columns>
+
+          <tr>
+            <th pSortableColumn="nombreMesa">Mesa
+              <p-sortIcon field="nombreMesa"></p-sortIcon>
+            </th>
+
+            <th pSortableColumn="capacidad">Capacidad
+              <p-sortIcon field="capacidad"></p-sortIcon>
+            </th>
+          </tr>
+
+        </ng-template>
+
+        <ng-template pTemplate="body" let-mesa let-columns="mesa">
+
+          <tr  [pSelectableRow]="mesa">
+
+            <td> <span class="p-column-title" pSortableColumn="nombremesa"><strong>Mesa</strong></span> {{mesa.nombreMesa}} </td>
+            <td> <span class="p-column-title" pSortableColumn="capacidad"><strong>Capacidad</strong></span> {{mesa.capacidad}} </td>
+
+          </tr>
+
+        </ng-template>
+
+        <ng-template pTemplate="footer" >
+          <th style="position: relative; left: 60%; top: 19px;">
+            <input pInputText type="text" (input)="dt.filterGlobal($any($event.target).value, 'contains')" placeholder="Buscar" />
+          </th>
+        </ng-template>
+
+      </p-table>
+    </p-panel>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+ @charset "UTF-8";
+
+* {
+	font-family: 'Merriweather', serif;
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+}
+
+mat-drawer {
+  width: 260px;
+  background: #326fa8;
+}
+
+mat-drawer-container {
+  background: #ffff;
+  height: 1000px;
+}
+
