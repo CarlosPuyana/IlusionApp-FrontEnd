@@ -54,9 +54,9 @@ export class CrearMesaComponent implements OnInit {
                 Swal.fire('Mesa creada', 'La mesa fue creada con éxito', 'success');
                 this.router.navigateByUrl("/dashboard/dueno/listMesa")
 
-                setTimeout(() => {
+                /* setTimeout(() => {
                   window.location.reload()
-                }, 2000);
+                }, 2000); */
 
               }, error: err => {
 
